@@ -1,3 +1,6 @@
+res = []
+
+
 def inner_list(lst, i, savelst):
     if isinstance(lst, list):
         for elem in lst:
