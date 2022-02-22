@@ -12,8 +12,7 @@ def inner_list(lst, i, savelst):
         if isinstance(lst[i], list):
             inner_list(lst[i], i + 1, savelst)
         else:
-            inner_list(sl, i + 1, savelst)
-
+            inner_list(savelst, i + 1, savelst)
     try:
         inner_list(lst[i - 1], i, savelst)
     except:
@@ -29,7 +28,8 @@ def inner_list(lst, i, savelst):
 
 
 savelst = [[[[[[[[[[[11], [12]], [13]], [14]], [15]], [16]], [17]]]]],
-      [3, 4, [5, 6, 7, [9, 10]], [1001, [1023, [[242], 1024, [1025, 10126], [1053]]]]], [77, [177]], [99], [33, [22]]]
+           [3, 4, [5, 6, 7, [9, 10]], [1001, [1023, [[242], 1024, [1025, 10126], [1053]]]]], [77, [177]], [99],
+           [33, [22]]]
 try:
     inner_list(savelst, 0, savelst)
 except:
