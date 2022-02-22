@@ -1,11 +1,3 @@
-import sys
-
-
-res = []
-
-sys.setrecursionlimit(10000)
-
-
 def inner_list(lst, i, savelst):
     if isinstance(lst, list):
         for elem in lst:
@@ -14,8 +6,6 @@ def inner_list(lst, i, savelst):
         else:
             if lst not in res:
                 res.append(lst)
-            else:
-                raise Exception
     for i in range(i, len(lst)):
         if isinstance(lst[i], list):
             inner_list(lst[i], i + 1, savelst)
@@ -38,8 +28,6 @@ def inner_list(lst, i, savelst):
 savelst = [[[[[[[[[[[11], [12]], [13]], [14]], [15]], [16]], [17]]]]],
            [3, 4, [5, 6, 7, [9, 10]], [1001, [1023, [[242], 1024, [1025, 10126], [1053]]]]], [77, [177]], [99],
            [33, [22]]]
-try:
-    inner_list(savelst, 0, savelst)
-except:
-    pass
+
+inner_list(savelst, 0, savelst)
 print(res)
